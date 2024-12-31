@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        label {
+            margin-left: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #score {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #feedback {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            width: 200px;
+            margin-top: 10px;
+        }
+
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        .question-container {
+            margin-bottom: 20px;
+        }
+
+        .question-container input[type="radio"] {
+            margin-left: 10px;
+        }
+
+        .question-container label {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Tech Quiz</h1>
+    <div id="timer" class="timer">Time Left: 15:00</div>
+
+    <form id="quiz">
+        <label for="name">Enter your name: </label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="class">Enter your class: </label>
+        <input type="text" id="class" name="class" required><br><br>
+
+        <!-- Example Question 1 -->
+        <div class="question-container">
+            <!-- Question 1 -->
+            <p>1) Which of the following is a NOSQL database?</p>
+            <input type="radio" id="mysql" name="question1" value="mysql">
+            <label for="mysql">MySQL</label><br>
+            <input type="radio" id="oracle" name="question1" value="oracle">
+            <label for="oracle">Oracle</label><br>
+            <input type="radio" id="mongodb" name="question1" value="mongodb">
+            <label for="mongodb">MongoDB</label><br>
+            <input type="radio" id="postgresql" name="question1" value="postgresql">
+            <label for="postgresql">PostgreSQL</label><br>
+
+            <!-- Question 2 -->
+            <p>2) Which company created the most used networking software in the 1980's?</p>
+            <input type="radio" id="microsoft" name="question2" value="microsoft">
+            <label for="microsoft">Microsoft</label><br>
+            <input type="radio" id="IBM" name="question2" value="IBM">
+            <label for="IBM">IBM</label><br>
+            <input type="radio" id="sun" name="question2" value="sun">
+            <label for="sun">Sun Microsystems</label><br>
+            <input type="radio" id="novell" name="question2" value="novell">
+            <label for="novell">Novell</label><br>
+
+            <!-- Question 3 -->
+            <p>3) What is a GPU?</p>
+            <input type="radio" id="Grouped Processing Unit" name="question3" value="Grouped Processing Unit">
+            <label for="Grouped Processing Unit">Grouped Processing Unit</label><br>
+            <input type="radio" id="Graphics Processing Unit" name="question3" value="Graphics Processing Unit">
+            <label for="Graphics Processing Unit">Graphics Processing Unit</label><br>
+            <input type="radio" id="Graphical Performance Utility" name="question3" value="Graphical Performance Utility">
+            <label for="Graphical Performance Utility">Graphical Performance Utility</label><br>
+            <input type="radio" id="Graphical Portable Unit" name="question3" value="Graphical Portable Unit">
+            <label for="Graphical Portable Unit">Graphical Portable Unit</label><br>
+
+            <!-- Question 4 -->
+            <p>4) How to retrieve all keys from Dictionaries in Python?</p>
+            <input type="radio" id="dictionary.keys()" name="question4" value="dictionary.keys()">
+            <label for="dictionary.keys()">dictionary.keys()</label><br>
+            <input type="radio" id="dictionary.get_keys()" name="question4" value="dictionary.get_keys()">
+            <label for="dictionary.get_keys()">dictionary.get_keys()</label><br>
+            <input type="radio" id="dictionary.extract_keys" name="question4" value="dictionary.extract_keys">
+            <label for="dictionary.extract_keys">dictionary.extract_keys</label><br>
+            <input type="radio" id="dictionary.all_keys" name="question4" value="dictionary.all_keys">
+            <label for="dictionary.all_keys">dictionary.all_keys</label><br>
+
+            <!-- Question 5 -->
+        <p>5) In Python, which module is commonly used for array operations?</p>
+        <input type="radio" id="list" name="question5" value="list">
+        <label for="list">list</label><br>
+        <input type="radio" id="math" name="question5" value="math">
+        <label for="math">math</label><br>
+        <input type="radio" id="array" name="question5" value="array">
+        <label for="array">array</label><br>
+        <input type="radio" id="numpy" name="question5" value="numpy">
+        <label for="numpy">numpy</label><br>
+
+        <!-- Question 6 -->
+        <p>6) Which of these is not a feature of Java?</p>
+        <input type="radio" id="object_oriented" name="question6" value="object_oriented">
+        <label for="object_oriented">Object-oriented</label><br>
+        <input type="radio" id="platform_independent" name="question6" value="platform_independent">
+        <label for="platform_independent">Platform-independent</label><br>
+        <input type="radio" id="compiled" name="question6" value="compiled">
+        <label for="compiled">Compiled</label><br>
+        <input type="radio" id="interpreted_language" name="question6" value="interpreted_language">
+        <label for="interpreted_language">Interpreted language</label><br>
+
+        <!-- Question 7 -->
+        <p>7) Which version of Python removed the print statement?</p>
+        <input type="radio" id="python1" name="question7" value="python1">
+        <label for="python1">Python 1.x</label><br>
+        <input type="radio" id="python2" name="question7" value="python2">
+        <label for="python2">Python 2.x</label><br>
+        <input type="radio" id="python3" name="question7" value="python3">
+        <label for="python3">Python 3.x</label><br>
+        <input type="radio" id="python4" name="question7" value="python4">
+        <label for="python4">Python 4.x</label><br>
+
+        <!-- Question 8 -->
+        <p>8) Which of the following is an immutable data type?</p>
+        <input type="radio" id="lists" name="question8" value="lists">
+        <label for="lists">Lists</label><br>
+        <input type="radio" id="dictionaries" name="question8" value="dictionaries">
+        <label for="dictionaries">Dictionaries</label><br>
+        <input type="radio" id="tuples" name="question8" value="tuples">
+        <label for="tuples">Tuples</label><br>
+        <input type="radio" id="sets" name="question8" value="sets">
+        <label for="sets">Sets</label><br>
+
+        <!-- Question 9 -->
+        <p>9) Which of the following is a feature of procedure-oriented programming?</p>
+        <input type="radio" id="class_based" name="question9" value="class_based">
+        <label for="class_based">Class-based</label><br>
+        <input type="radio" id="focus_on_functions" name="question9" value="focus_on_functions">
+        <label for="focus_on_functions">Focus on functions</label><br>
+        <input type="radio" id="inheritance" name="question9" value="inheritance">
+        <label for="inheritance">Inheritance</label><br>
+        <input type="radio" id="polymorphism" name="question9" value="polymorphism">
+        <label for="polymorphism">Polymorphism</label><br>
+
+        <!-- Question 10 -->
+        <p>10) Which principle of OOP is illustrated by defining different methods with the same name but different parameters?</p>
+        <input type="radio" id="inheritance" name="question10" value="inheritance">
+        <label for="inheritance">Inheritance</label><br>
+        <input type="radio" id="polymorphism" name="question10" value="polymorphism">
+        <label for="polymorphism">Polymorphism</label><br>
+        <input type="radio" id="encapsulation" name="question10" value="encapsulation">
+        <label for="encapsulation">Encapsulation</label><br>
+        <input type="radio" id="abstraction" name="question10" value="abstraction">
+        <label for="abstraction">Abstraction</label><br>
+
+        <!-- Question 11 -->
+        <p>11) Which topology does the Internet resemble?</p>
+        <input type="radio" id="ring" name="question11" value="ring">
+        <label for="ring">Ring</label><br>
+        <input type="radio" id="bus" name="question11" value="bus">
+        <label for="bus">Bus</label><br>
+        <input type="radio" id="star" name="question11" value="star">
+        <label for="star">Star</label><br>
+        <input type="radio" id="mesh" name="question11" value="mesh">
+        <label for="mesh">Mesh</label><br>
+
+        <!-- Question 12 -->
+        <p>12) Which device is used to connect different network segments in a computer network?</p>
+        <input type="radio" id="repeater" name="question12" value="repeater">
+        <label for="repeater">Repeater</label><br>
+        <input type="radio" id="router" name="question12" value="router">
+        <label for="router">Router</label><br>
+        <input type="radio" id="bridge" name="question12" value="bridge">
+        <label for="bridge">Bridge</label><br>
+        <input type="radio" id="modem" name="question12" value="modem">
+        <label for="modem">Modem</label><br>
+
+        <!-- Question 13 -->
+        <p>13) Which of the following is NOT a characteristic of a DBMS?</p>
+        <input type="radio" id="data_redundancy" name="question13" value="data_redundancy">
+        <label for="data_redundancy">Data redundancy</label><br>
+        <input type="radio" id="data_integrity" name="question13" value="data_integrity">
+        <label for="data_integrity">Data integrity</label><br>
+        <input type="radio" id="data_security" name="question13" value="data_security">
+        <label for="data_security">Data security</label><br>
+        <input type="radio" id="data_independence" name="question13" value="data_independence">
+        <label for="data_independence">Data independence</label><br>
+
+        <!-- Question 14 -->
+        <p>14) Which component of an operating system is responsible for managing files?</p>
+        <input type="radio" id="file_manager" name="question14" value="file_manager">
+        <label for="file_manager">File System Manager</label><br>
+        <input type="radio" id="memory_manager" name="question14" value="memory_manager">
+        <label for="memory_manager">Memory Manager</label><br>
+        <input type="radio" id="process_manager" name="question14" value="process_manager">
+        <label for="process_manager">Process Manager</label><br>
+        <input type="radio" id="device_driver" name="question14" value="device_driver">
+        <label for="device_driver">Device Driver</label><br>
+
+        <!-- Question 15 -->
+        <p>15) Which of the following is not a Python built-in data type?</p>
+        <input type="radio" id="dict" name="question15" value="dict">
+        <label for="dict">dict</label><br>
+        <input type="radio" id="array" name="question15" value="array">
+        <label for="array">array</label><br>
+        <input type="radio" id="set" name="question15" value="set">
+        <label for="set">set</label><br>
+        <input type="radio" id="frozenset" name="question15" value="frozenset">
+        <label for="frozenset">Frozenset</label><br>
+
+
+        </div>
+
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>
+
+    <div id="score"></div>
+    <div id="feedback"></div>
+
+    <script>
+        const form = document.getElementById('quiz');
+        const scoreDiv = document.getElementById('score');
+        const feedbackDiv = document.getElementById('feedback');
+        const timerDiv = document.getElementById('timer');
+
+        let timeLeft = 15 * 60;  // 15 minutes in seconds
+        let timerInterval;
+
+        // Start the timer countdown
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerDiv.innerText = `Time Left: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                timeLeft--;
+
+                if (timeLeft < 0) {
+                    clearInterval(timerInterval);
+                    alert("Time's up!");
+                    form.submit(); // Automatically submit the form when time runs out
+                }
+            }, 1000);
+        }
+
+        // Start the timer when the page loads
+        startTimer();
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            clearInterval(timerInterval);  // Stop the timer when the form is submitted
+            const formData = new FormData(form);
+            const name = document.getElementById('name').value;  // Get participant's name
+            const userClass = document.getElementById('class').value;  // Get participant's class
+            const score = calculateScore(formData);
+            sendDataToServer(name, userClass, score);  // Send name, class, and score to the server
+            displayScore(score);
+            giveFeedback(score);
+        });
+
+        function calculateScore(formData) {
+            let score = 0;
+
+            // Correct answers for each question
+            const correctAnswers = {
+                'question1': 'mongodb',
+                'question2': 'novell',
+                'question3': 'Graphics Processing Unit',
+                'question4': 'dictionary.keys()',
+                'question5': 'numpy',
+                'question6': 'compiled',
+                'question7': 'python3',
+                'question8': 'tuples',
+                'question9': 'focus_on_functions',
+                'question10': 'polymorphism',
+                'question11': 'mesh',
+                'question12': 'router',
+                'question13': 'data_redundancy',
+                'question14': 'file_manager',
+                'question15': 'array'
+            };
+
+            // Check selected answers against the correct answers
+            for (const [key, value] of formData) {
+                if (value === correctAnswers[key]) {
+                    score++;
+                }
+            }
+
+            return score;
+        }
+
+        function sendDataToServer(name, userClass, score) {
+            fetch('http://localhost:3000/submit-score', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: name,
+                    class: userClass,
+                    score: score
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Score submitted successfully', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+
+        function displayScore(score) {
+            scoreDiv.innerHTML = `Your score is ${score} out of 15.`;
+            form.style.display = 'none'; // Hide the form after submitting
+        }
+
+        function giveFeedback(score) {
+            if (score >= 10) {
+                feedbackDiv.innerHTML = "Congratulations! You are eligible for the next round.";
+                feedbackDiv.style.color = "#28a745"; // Green color for success
+            } else {
+                feedbackDiv.innerHTML = "Sorry, you are not eligible for the next round. Better luck next time!";
+                feedbackDiv.style.color = "#d9534f"; // Red color for failure
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
